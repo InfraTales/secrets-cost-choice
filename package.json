@@ -1,0 +1,45 @@
+{
+  "name": "secrets-cost-choice",
+  "version": "1.0.0",
+  "description": "Parameter Store and Secrets Manager side by side: one CDK stack, two Lambda readers (the Parameters and Secrets Lambda Extension, and an in-process cache), least-privilege KMS access.",
+  "private": true,
+  "license": "MIT-0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "eslint .",
+    "bundle": "ts-node scripts/bundle.ts",
+    "test": "npm run bundle && jest",
+    "synth": "cdk synth --quiet",
+    "check": "npm run build && npm run lint && npm test && npm run synth",
+    "deploy": "npm run bundle && cdk deploy --outputs-file cdk-outputs.json",
+    "destroy": "cdk destroy",
+    "smoke": "ts-node scripts/smoke-test.ts",
+    "put-parameter": "ts-node scripts/put-parameter.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.1152.0",
+    "@aws-sdk/client-ssm": "^3.1152.0",
+    "aws-cdk-lib": "^2.273.0",
+    "cdk-nag": "^3.0.2",
+    "constructs": "^10.8.1"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-lambda": "^3.1152.0",
+    "@eslint/js": "^10.0.1",
+    "@types/aws-lambda": "^8.10.164",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.19.2",
+    "aws-cdk": "^2.1145.0",
+    "aws-sdk-client-mock": "^4.1.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.12.0",
+    "jest": "^30.5.2",
+    "ts-jest": "^29.4.15",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.71.2"
+  }
+}
