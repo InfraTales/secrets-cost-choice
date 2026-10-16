@@ -31,4 +31,4 @@ A secret stored by mistake as a String parameter sits in Parameter Store unencry
 
 ## Accepted cdk-nag finding
 
-The stack acknowledges `AwsSolutions-SMG4` (no automatic rotation) on the secret. It stands in for a third-party API key, which only the issuer can rotate. [runbook.md](runbook.md) has the manual steps.
+The stack acknowledges `AwsSolutions-SMG4` (no automatic rotation) on the secret. It stands in for a third-party API key from a company that isn't a Secrets Manager integration partner, so only the issuer can rotate it. If the issuer is an integration partner, a [managed external secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html) rotates the key with no Lambda function in your account. [runbook.md](runbook.md) has the manual steps.
