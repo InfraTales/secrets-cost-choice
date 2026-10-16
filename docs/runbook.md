@@ -2,7 +2,7 @@
 
 ## Rotate the secret by hand
 
-The secret stands in for an API key that someone else issues, so there's no rotation function.
+The secret stands in for an API key from a company that isn't a Secrets Manager integration partner. Only that company can issue a new key, so there's no automatic rotation. If your issuer is an integration partner, use a [managed external secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html) instead: Secrets Manager rotates it with no Lambda function in your account.
 
 1. Get the new key from the issuer.
 2. Store it as a new version: `aws secretsmanager put-secret-value --secret-id secrets-cost-choice/partner-api-key --secret-string file://new-key.txt`. Secrets Manager moves the `AWSCURRENT` label to the new version and `AWSPREVIOUS` to the old one.
