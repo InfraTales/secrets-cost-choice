@@ -2,6 +2,10 @@
 
 This repo puts AWS Systems Manager Parameter Store and AWS Secrets Manager next to each other in one AWS CDK stack, so you can compare what each one costs and how you read from it in AWS Lambda. It goes with the article "Parameter Store or Secrets Manager: stop paying $0.40 per secret you don't rotate".
 
+## Architecture
+
+![Two Lambda readers fetch one secret and one parameter through a scoped KMS key](docs/architecture.png)
+
 ## What's in the stack
 
 | Piece | Why it's there |
