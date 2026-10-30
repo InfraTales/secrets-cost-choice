@@ -20,14 +20,14 @@
     "put-parameter": "ts-node scripts/put-parameter.ts"
   },
   "dependencies": {
-    "@aws-sdk/client-secrets-manager": "^3.1152.0",
-    "@aws-sdk/client-ssm": "^3.1152.0",
+    "@aws-sdk/client-secrets-manager": "^3.1156.0",
+    "@aws-sdk/client-ssm": "^3.1156.0",
     "aws-cdk-lib": "^2.273.0",
     "cdk-nag": "^3.0.2",
     "constructs": "^10.8.1"
   },
   "devDependencies": {
-    "@aws-sdk/client-lambda": "^3.1152.0",
+    "@aws-sdk/client-lambda": "^3.1156.0",
     "@eslint/js": "^10.0.1",
     "@types/aws-lambda": "^8.10.164",
     "@types/jest": "^30.0.0",
